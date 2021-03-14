@@ -11,7 +11,7 @@ class GenericTest {
 
 	@Test
 	void test() {
-        Person[] ps = new Person[] {
+        var ps = new Person[] {
                 new Person("Bob", 61),
                 new Person("Alice", 88),
                 new Person("Lily", 75),
