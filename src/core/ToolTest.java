@@ -73,5 +73,4 @@ public class ToolTest {
         sr.nextBytes(buffer); // 用安全随机数填充buffer
         System.out.println(Arrays.toString(buffer));
 	}
-
 }
