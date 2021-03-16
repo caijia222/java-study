@@ -10,11 +10,14 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/java-study/lib/commons-logging-1.2-javadoc.jar!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/java-study/resource/commons-logging-1.2-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/log4j-api-2.3.jar"/>
-	<classpathentry kind="lib" path="lib/log4j-core-2.3.jar"/>
-	<classpathentry kind="lib" path="lib/log4j-jcl-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-api-2.3.jar" sourcepath="resource/log4j-api-2.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-core-2.3.jar" sourcepath="resource/log4j-core-2.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-jcl-2.3.jar" sourcepath="resource/log4j-jcl-2.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/logback-classic-1.2.3.jar" sourcepath="resource/logback-classic-1.2.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-1.2.3.jar" sourcepath="resource/logback-core-1.2.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.9.jar" sourcepath="resource/slf4j-api-1.7.9-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
