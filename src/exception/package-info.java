@@ -6,9 +6,5 @@
  * 4、自定义异常<br>
  * 5、NullPointerException<br>
  * 6、使用断言<br>
- * 7、使用JDK Logging<br>
- * 8、使用Commons Logging<br>
- * 9、使用Log4j<br>
- * 10、使用SLF4J和Logback<br>
 */ 
 package exception;
