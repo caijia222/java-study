@@ -2,8 +2,10 @@ package reflection;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Proxy;
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -135,6 +137,64 @@ public class ReflectionTest {
 		}
     }
     
+    @Test
+    public void test12() {
+    	Class<Integer> clz = Integer.class;
+    	Class<? super Integer> superclass = clz.getSuperclass();
+    	System.out.println(superclass);
+    	Class<?> superclass2 = superclass.getSuperclass();
+    	System.out.println(superclass2);
+    	System.out.println(superclass2.getSuperclass());
+    }
+    
+    @Test
+    public void test13() {
+    	Class<Integer> clz = Integer.class;
+    	Class<?>[] interfaces = clz.getInterfaces();
+    	for (Class<?> class1 : interfaces) {
+			System.out.println(class1);
+		}
+    	System.out.println("==============");
+    	interfaces = clz.getSuperclass().getInterfaces();
+    	for (Class<?> class1 : interfaces) {
+			System.out.println(class1);
+		}
+    }
+    
+    @Test
+    public void test14() {
+    	System.out.println(Integer.class.isAssignableFrom(Integer.class));
+    	System.out.println(Number.class.isAssignableFrom(Integer.class));
+    	System.out.println(Object.class.isAssignableFrom(Integer.class));
+    	System.out.println(Integer.class.isAssignableFrom(Number.class));
+    }
+    
+    @Test
+    public void test15() {
+    	Hello hello = 
+    			(Hello)Proxy.newProxyInstance(
+	    			ReflectionTest.class.getClassLoader(), 
+	    			new Class[] {Hello.class}, 
+	    			(proxy,method,args)->{
+	    				System.out.println(method);
+	    				System.out.println(Arrays.toString(args));
+	    				return null;
+	    			}
+    			);
+    	hello.morning("good morning");
+    }
+    
+    @Test
+    public void test16() {
+    	Hello hello = new HelloDynamicProxy((proxy,method,args)->{
+    		System.out.println(proxy);
+			System.out.println(method);
+			System.out.println(Arrays.toString(args));
+			return null;
+    	});
+    	hello.morning("good morning");
+    }
+    
 }
 
 class Student extends Person {
@@ -163,3 +223,21 @@ class Person {
     public void hello() {System.out.println("Person.hello");}
 }
 
+interface Hello{
+	void morning(String name);
+}
+
+class HelloDynamicProxy implements Hello{
+	InvocationHandler handler;
+	public HelloDynamicProxy(InvocationHandler handler) {
+		this.handler = handler;
+	}
+	@Override
+	public void morning(String name) {
+		try {
+			handler.invoke(this, Hello.class.getMethod("morning", String.class), new String[] {name});
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+	}
+}
