@@ -36,4 +36,29 @@ class Counter2{
 	public int get() {
 		return count;
 	}
+	public static void test() {
+		synchronized(Counter2.class) {
+			System.out.println("锁住Counter2.class");
+		}
+	}
+}
+
+class Counter3{
+	private int count = 0;
+	
+	public synchronized void add() {
+		count += 1;
+	}
+	
+	public synchronized void dec() {
+		count -= 1;
+	}
+	
+	public int get() {
+		return count;
+	}
+	
+	public synchronized static void test() {
+		System.out.println("锁住Counter3.class");
+	}
 }

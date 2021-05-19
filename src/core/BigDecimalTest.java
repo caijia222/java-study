@@ -24,7 +24,6 @@ public class BigDecimalTest {
 		BigDecimal[] divideAndRemainder = x.divideAndRemainder(y);
 		System.out.println(divideAndRemainder[0]);
 		System.out.println(divideAndRemainder[1]);
-
 	}
 	
 	@Test
@@ -35,5 +34,11 @@ public class BigDecimalTest {
 		System.out.println(x.equals(y.stripTrailingZeros()));
 		System.out.println(x.compareTo(y));
 		System.out.println(x.intValue());
+	}
+	
+	@Test
+	public void test4() {
+		BigDecimal x = new BigDecimal("12.345");
+		System.out.println(x.negate());
 	}
 }
