@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import ch.qos.logback.core.encoder.ByteArrayUtil;
+//import ch.qos.logback.core.encoder.ByteArrayUtil;
 
 /**
  * @author 93652
@@ -32,7 +32,7 @@ public class HashAlgorithm {
 		md.update("Hello".getBytes(StandardCharsets.UTF_8));
 		md.update("World".getBytes(StandardCharsets.UTF_8));
 		byte[] digest = md.digest();
-		System.out.println(ByteArrayUtil.toHexString(digest));
+//		System.out.println(ByteArrayUtil.toHexString(digest));
 		System.out.println(Arrays.toString(digest));
 		System.out.println(new BigInteger(1, digest).toString());
 	}
