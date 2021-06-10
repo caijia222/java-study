@@ -26,7 +26,7 @@ import com.sun.mail.pop3.POP3SSLStore;
  * 邮件服务器则称为MTA：Mail Transfer Agent
  * 最终到达的邮件服务器称为MDA：Mail Delivery Agent
  */
-public class EmailApi {
+public class Email {
 	
 	/**
 	 * MUA到MTA发送邮件的协议就是SMTP协议，它是Simple Mail Transport Protocol的缩写，使用标准端口25，也可以使用加密端口465或587<br>

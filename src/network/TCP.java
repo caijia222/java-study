@@ -20,7 +20,7 @@ import org.junit.Test;
  * 对服务器端来说，它的Socket是指定的IP地址和指定的端口号；
  * 对客户端来说，它的Socket是它所在计算机的IP地址和一个由操作系统分配的随机端口号。
  */
-public class TCPProggram {
+public class TCP {
 	
 	@Test
 	public void tcpServer() throws IOException {

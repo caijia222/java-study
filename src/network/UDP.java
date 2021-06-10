@@ -13,7 +13,7 @@ import org.junit.Test;
  * UDP没有创建连接，数据包也是一次收发一个，所以没有流的概念
  * 在Java中使用UDP编程，仍然需要使用Socket，UDP端口和TCP端口虽然都使用0~65535，但他们是两套独立的端口
  */
-public class UDPProggram {
+public class UDP {
 	
 	@Test
 	public void udpServer() throws IOException {
