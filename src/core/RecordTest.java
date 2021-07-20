@@ -30,10 +30,8 @@ public class RecordTest {
 
 }
 
-@SuppressWarnings("preview")
 record Point1(int x, int y) {}
 
-@SuppressWarnings("preview")
 record Point2(int x, int y) {
 	
 	public Point2{
