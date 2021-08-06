@@ -2,13 +2,13 @@ package jdbc;
 
 public class Student {
 
-	private long id;
+	private int id;
 	private String name;
 	private int gender;
 	private int grade;
 	private int score;
 	
-	public Student(long id, String name, int gender, int grade, int score) {
+	public Student(int id, String name, int gender, int grade, int score) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -26,10 +26,10 @@ public class Student {
 	}
 
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
